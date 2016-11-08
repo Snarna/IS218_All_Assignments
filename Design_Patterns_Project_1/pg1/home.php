@@ -1,6 +1,6 @@
 <?php
 require_once('carBundleStrategy.php');
-require_once('CarFactory.php');
+require_once('carFactory.php');
 
 $myCar = new Car('Honda', 'Accord', 'LX');
 
