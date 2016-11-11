@@ -5,9 +5,10 @@ class MyFunBook {
   private static $book = NULL;
   private static $isOut = FALSE;
 
-  private function __construct() {}
+  private function __construct() {
+  }
 
-  static function borrowMyFunBook(){
+  static function borrowBook(){
     if(self::$isOut == FALSE){
       if(self::$book == NULL){
         self::$book = new MyFunBook();
@@ -20,7 +21,7 @@ class MyFunBook {
     }
   }
 
-  static function returnMyFunBook(MyFunBook $returnedBook){
+  static function returnBook(MyFunBook $returnedBook){
     self::$isOut = FALSE;
   }
 
@@ -35,6 +36,7 @@ class MyFunBook {
   public function getAuthorAndTitle(){
     return $this->title . ' by ' . $this->author;
   }
+
 }
 
 

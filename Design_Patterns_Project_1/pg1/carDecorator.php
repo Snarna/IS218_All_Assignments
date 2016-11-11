@@ -4,6 +4,7 @@
 class CarTrimDecorator {
   public $car;
   public $carTrim;
+  public $carGPS;
 
   public function __construct(Car $car){
     $this->car = $car;
@@ -38,5 +39,13 @@ class TrimUltra extends CarTrimDecorator{
     $this->ctd->carTrim = $this->ctd->carTrim . '-ULTRA';
   }
 
+}
+
+class AddGPS extends CarTrimDecorator{
+  private $ctd;
+  public function __construct(CarTrimDecorator $ctd){
+   $this->ctd = $ctd;
+   $this->ctd->carGPS = 'GPS:YES';
+  }
 }
 ?>

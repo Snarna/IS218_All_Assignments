@@ -1,16 +1,16 @@
 <?php
-class myBoringBook {
-  private $author = "Mingjie Li";
-  private $title = "My Funny Book";
+class MyBoringBook {
+  private $author = "Benjamin Li";
+  private $title = "My Boring Book";
   private static $book = NULL;
   private static $isOut = FALSE;
 
   private function __construct() {}
 
-  static function borrowMyFunBook(){
+  static function borrowBook(){
     if(self::$isOut == FALSE){
       if(self::$book == NULL){
-        self::$book = new MyFunBook();
+        self::$book = new MyBoringBook();
       }
       self::$isOut = TRUE;
       return self::$book;
@@ -20,7 +20,7 @@ class myBoringBook {
     }
   }
 
-  static function returnMyFunBook(MyFunBook $returnedBook){
+  static function returnBook(MyBoringBook $returnedBook){
     self::$isOut = FALSE;
   }
 

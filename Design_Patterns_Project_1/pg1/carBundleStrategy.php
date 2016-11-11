@@ -15,6 +15,10 @@ class CarBundle {
         break;
       case 'C':
         $this->bundle = new CarWithUltraTrimBundle();
+        break;
+      case 'D':
+        $this->bundle = new CarWithGPSBundle();
+        break;
     }
   }
 
@@ -55,6 +59,17 @@ class CarWithUltraTrimBundle implements BundleInterface{
     echo $deco->car->carMake . '<br>';
     echo $deco->car->carModel . '<br>';
     echo $deco->carTrim . '<br>';
+  }
+}
+
+class CarWithGPSBundle implements BundleInterface{
+  public function showBundle(Car $car){
+    $deco = new CarTrimDecorator($car);
+    $decoGPS = new AddGPS($deco);
+    echo $deco->car->carMake . '<br>';
+    echo $deco->car->carModel . '<br>';
+    echo $deco->carTrim . '<br>';
+    echo $deco->carGPS . '<br>';
   }
 }
 
