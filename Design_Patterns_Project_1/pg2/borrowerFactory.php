@@ -13,7 +13,7 @@ class Borrower {
     if($book != NULL){
       $this->book = $book;
       $this->hasBook = TRUE;
-      $this->notify($this->book->getTitle(), 'Borrow');
+      $this->notify($this->name ,$this->book->getTitle(), 'borrows');
     }
   }
 
@@ -21,7 +21,7 @@ class Borrower {
     if($this->book != NULL){
       $this->book->returnBook($this->book);
       $this->hasBook = FALSE;
-      $this->notify($this->book->getTitle(), 'Return');
+      $this->notify($this->name ,$this->book->getTitle(), 'returns');
     }
   }
 
@@ -37,9 +37,9 @@ class Borrower {
     }
   }
 
-  public function notify($bookTitle, $action){
+  public function notify($name, $bookTitle, $action){
     foreach($this->obs as $ob){
-      $ob->update($bookTitle, $action);
+      $ob->update($name, $bookTitle, $action);
     }
   }
 
