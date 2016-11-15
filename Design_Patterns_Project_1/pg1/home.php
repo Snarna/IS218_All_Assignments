@@ -2,7 +2,7 @@
 require_once('carBundleStrategy.php');
 require_once('carFactory.php');
 
-$myCar = new Car('Honda', 'Accord', 'LX');
+$myCar = CarFactory::createCar('Honda', 'Accord', 'LX');
 
 $bundleA = new CarBundle('A');
 $bundleB = new CarBundle('B');
