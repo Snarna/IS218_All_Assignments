@@ -18,10 +18,14 @@ if(isset($_POST['inputEmail'])){
    <body>
       <div class="row">
          <div class="col-sm-6 offset-sm-6">
-            <form method="post" action="loginResult.php">
+            <form method="post" action="loginResult.php" enctype="multipart/form-data">
                <div class="form-group">
                   <label for="inputEmail">Email address</label>
-                  <input type="text" class="form-control" id="inputEmail" name="inputEmail" aria-describedby="emailHelp" placeholder="Enter email">
+                  <input type="text" class="form-control" id="inputEmail" name="inputEmail" placeholder="Enter email">
+               </div>
+               <div class="form-group">
+                  <label for="inputImage">Email address</label>
+                  <input type="file" class="form-control" id="inputImage" name="inputImage" accept="image/*">
                </div>
                <button type="submit" class="btn btn-primary">Submit</button>
             </form>
