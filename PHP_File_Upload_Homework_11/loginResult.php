@@ -9,7 +9,7 @@
    </head>
    <body>
      <?php
-     define("DATA_STORE_DIR", "../PHP_File_Upload_Homework_11/data/");
+     define("DATA_STORE_DIR", __DIR__."/data/");
      require_once("validate.class.php");
 
      //Check Email
@@ -52,7 +52,7 @@
        //Chmod
        chmod(DATA_STORE_DIR . $name , 0644);
        //Display Image
-       echo "<img src='".DATA_STORE_DIR . $name . "' class='img-thumbnail'><br>";
+       echo "<img src='./data/" . $name . "' class='img-thumbnail'><br>";
      }
       ?>
    </body>
